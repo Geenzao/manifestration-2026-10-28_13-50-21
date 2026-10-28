@@ -612,6 +612,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8039725205395202093, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8665644189865411762, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
       propertyPath: m_Name
       value: UI Jeu
