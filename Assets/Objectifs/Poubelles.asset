@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: Poubelles
   m_EditorClassIdentifier: Assembly-CSharp::Objectif
   objectifID: poubelles
-  objectifName: Detruire 5 poubelles
-  objectifDescription: "Mettre le feu \xE0 des poubelles"
+  objectifDescription: Bruler des poubelles
   requiredAmount: 5
   currentAmount: 0
   minAmount: 1
-  maxAmount: 5
+  maxAmount: 3

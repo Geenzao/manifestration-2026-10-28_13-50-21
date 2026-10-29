@@ -21,7 +21,7 @@ public class ObjectifsUI : MonoBehaviour
 
         Ligne ligne = new Ligne();
         ligne.texte = instance.GetComponentInChildren<TextMeshProUGUI>();
-        ligne.check = instance.transform.Find("Check/Image").gameObject;
+        ligne.check = instance.transform.Find("Check/Validation").gameObject;
         ligne.check.SetActive(false);
 
         lignes.Add(objectif, ligne);

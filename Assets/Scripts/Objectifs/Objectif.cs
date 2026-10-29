@@ -5,7 +5,6 @@ using UnityEngine;
 public class Objectif : ScriptableObject
 {
     public string objectifID;
-    public string objectifName;
     public string objectifDescription;
     [HideInInspector] public int requiredAmount;
     public int currentAmount;
