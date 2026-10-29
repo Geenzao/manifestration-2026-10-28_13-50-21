@@ -15,6 +15,11 @@ public class PlayerManager : MonoBehaviour
         PlayerCamera.instance.player = this;
     }
 
+    void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Update()
     {
         playerLocomotionManager.HandleAllMovement();
