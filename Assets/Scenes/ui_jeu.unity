@@ -148,7 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27f3e0fb892e1374aa5bf56d7a3bc209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  objectifManager: {fileID: 1909645728}
   chrono: {fileID: 1817257564}
   onWin:
     m_PersistentCalls:
@@ -522,7 +521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   texte: {fileID: 1661359702}
   compteARebours: 1
-  dureeInitiale: 10
+  dureeInitiale: 300
   demarrerAuLancement: 0
   onTermine:
     m_PersistentCalls:
@@ -674,6 +673,26 @@ PrefabInstance:
     - target: {fileID: 443464959569945914, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
       propertyPath: m_HorizontalFit
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 576370783389674793, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 576370783389674793, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 01f8ccdf6d6522847a1f4f80814625c4, type: 2}
+    - target: {fileID: 576370783389674793, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 576370783389674793, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1268768419079816922, guid: 01f8ccdf6d6522847a1f4f80814625c4, type: 2}
+    - target: {fileID: 576370783389674793, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 978257040634129110, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
       propertyPath: m_Pivot.x
