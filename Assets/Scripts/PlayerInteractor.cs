@@ -11,34 +11,31 @@ public class PlayerInteractor : MonoBehaviour
     private Vector2 _throwDir;
 
     // On interact key pressed, do stuff based on the type of the interactable
-    public void Interact(InputAction.CallbackContext ctx)
+    public void Interact()
     {
-        if (ctx.phase == InputActionPhase.Started)
+        // Interact if something in range
+        if (ClosestInteractable(out IInteractable interactable))
         {
-            // Interact if something in range
-            if (ClosestInteractable(out IInteractable interactable))
+            switch (interactable.Type)
             {
-                switch (interactable.Type)
-                {
-                    case InteractType.Interact:
+                case InteractType.Interact:
+                    interactable.Interact(this);
+                    break;
+                case InteractType.PickItem:
+                    if ((_heldItem == null) && (interactable is IItem))
+                    {
                         interactable.Interact(this);
-                        break;
-                    case InteractType.PickItem:
-                        if ((_heldItem == null) && (interactable is IItem))
-                        {
-                            interactable.Interact(this);
-                            _heldItem = interactable;
-                        }
-                        else
-                        {
-                            ThrowItem();
-                        }
-                        break;
-                }
+                        _heldItem = interactable;
+                    }
+                    else
+                    {
+                        ThrowItem();
+                    }
+                    break;
             }
-            // If no interaction and got something to put down
-            else if (_heldItem != null) ThrowItem();
         }
+        // If no interaction and got something to put down
+        else if (_heldItem != null) ThrowItem();
     }
 
     // Check for interactables around the player, and get the closest one

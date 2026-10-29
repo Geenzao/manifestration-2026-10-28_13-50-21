@@ -28,7 +28,7 @@ public class Item : MonoBehaviour, IInteractable, IItem
         // Move the item on the top of the player body if picked
         if (_isPicked)
         {
-            transform.position = player.transform.position + Vector3.up;
+            transform.position = player.transform.position + Vector3.up * 1.1f;
         }
     }
 

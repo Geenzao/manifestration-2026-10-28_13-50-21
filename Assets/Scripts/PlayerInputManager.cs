@@ -53,6 +53,7 @@ public class PlayerInputManager : MonoBehaviour
             // Takes values when input is performed and give it to our movementInput variable
             playerControls.PlayerMovement.Movement.performed += input => movementInput = input.ReadValue<Vector2>();
             playerControls.PlayerActions.Jump.performed += input => jumpInput = true;
+            playerControls.PlayerActions.Interact.performed += input => GetComponent<PlayerInteractor>().Interact();
         }
 
         playerControls.Enable();
