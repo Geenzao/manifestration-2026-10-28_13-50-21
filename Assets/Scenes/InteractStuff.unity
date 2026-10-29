@@ -1196,6 +1196,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c91ed9e7b8aaa704c8a9d0ee8010fff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactor
+  _interactableMask:
+    serializedVersion: 2
+    m_Bits: 512
+  _interactDistance: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

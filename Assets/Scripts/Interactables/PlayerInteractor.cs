@@ -1,17 +1,11 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerInteractor : MonoBehaviour
 {
-    private LayerMask _interactableMask;
+    [SerializeField] private LayerMask _interactableMask;
+    [SerializeField] private float _interactDistance = 1.0f;
     private IInteractable _pickedItem;
-
-    private void Awake()
-    {
-        // Get the interactable mask
-        _interactableMask = LayerMask.GetMask("Interactable");
-    }
 
     // On interact key pressed, do stuff based on the type of the interactable
     public void Interact(InputAction.CallbackContext ctx)
@@ -19,7 +13,7 @@ public class PlayerInteractor : MonoBehaviour
         if (ctx.phase == InputActionPhase.Started)
         {
             // Interact if something in range
-            if (DoInteraction(out IInteractable interactable))
+            if (ClosestInteractable(out IInteractable interactable))
             {
                 bool hasInteracted = interactable.Interact(this, _pickedItem, out InteractType type);
                 Debug.Log(type);
@@ -50,17 +44,18 @@ public class PlayerInteractor : MonoBehaviour
     }
 
     // Check for interactables around the player, and get the closest one
-    private bool DoInteraction(out IInteractable interactable)
+    private bool ClosestInteractable(out IInteractable interactable)
     {
         float distance = Mathf.Infinity;
         interactable = null;
 
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 1.0f, _interactableMask);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, _interactDistance, _interactableMask);
 
         foreach (Collider hit in hitColliders)
         {
             if (hit.TryGetComponent(out IInteractable component))
             {
+                // If component found check
                 if (component.CanInteract() && distance > Vector3.Distance(transform.position, hit.transform.position))
                 {
                     interactable = component;
