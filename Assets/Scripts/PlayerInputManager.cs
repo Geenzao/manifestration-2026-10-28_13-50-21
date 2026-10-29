@@ -21,8 +21,21 @@ public class PlayerInputManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        SceneManager.activeSceneChanged += OnSceneChanged;
     }
 
+    void OnSceneChanged(Scene previousScene, Scene currentScene)
+    {   
+        if (currentScene.name == "MainMenu")
+        {
+            instance.enabled = false;
+        }
+        else
+        {   
+            Debug.Log("Enabling PlayerInputManager for scene: " + currentScene.name);
+            instance.enabled = true;
+        }
+    }
 
     void OnEnable()
     {
@@ -74,5 +87,10 @@ public class PlayerInputManager : MonoBehaviour
         {
             moveAmount = 1;
         }
+    }
+
+    void OnDestroy()
+    {
+        SceneManager.activeSceneChanged -= OnSceneChanged;
     }
 }
