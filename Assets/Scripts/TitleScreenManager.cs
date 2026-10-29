@@ -10,6 +10,7 @@ public class TitleScreenManager : MonoBehaviour
 
     [Header("UI Elements")]
     [SerializeField] TextMeshProUGUI playerName;
+    [SerializeField] GameObject settingsPanel;
 
     void Start()
     {
@@ -27,6 +28,14 @@ public class TitleScreenManager : MonoBehaviour
     public void StartGame()
     {
         StartCoroutine(StartGameAsync());
+    }
+
+    public void Settings()
+    {
+        if (settingsPanel.activeInHierarchy)
+            settingsPanel.SetActive(false);
+        else
+            settingsPanel.SetActive(true);
     }
 
     public void ChooseNextSkin()

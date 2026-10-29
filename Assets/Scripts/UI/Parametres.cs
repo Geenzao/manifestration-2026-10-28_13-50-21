@@ -15,6 +15,7 @@ public class Parametres : MonoBehaviour
     [SerializeField] private Slider musicSlider;
     // Le slider des SFX
     [SerializeField] private Slider sfxSlider;
+    [SerializeField] private Button quitButton;
 
     private void Awake()
     {
@@ -33,6 +34,7 @@ public class Parametres : MonoBehaviour
             //Quand la valeur du slider est changer on appelle SetSFXVolume avec la nouvelle valeur comme parametre
             sfxSlider.onValueChanged.AddListener(SetSFXVolume);
         }
+        quitButton.onClick.AddListener(Close);
     }
 
     private void OnDestroy()
@@ -78,5 +80,10 @@ public class Parametres : MonoBehaviour
         }
 
         return Mathf.Log10(value) * 20f;
+    }
+
+    private void Close()
+    {
+        gameObject.SetActive(false);
     }
 }
