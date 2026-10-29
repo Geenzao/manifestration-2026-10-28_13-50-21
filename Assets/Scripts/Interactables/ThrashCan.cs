@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class ThrashCan : MonoBehaviour, IInteractable
 {
+    [SerializeField] private GameObject normalModel;
+    [SerializeField] private GameObject burningModel;
     public InteractType Type => InteractType.Interact;
 
     public bool CanInteract()
@@ -44,8 +46,23 @@ public class ThrashCan : MonoBehaviour, IInteractable
 
     public IEnumerator BurnTrashcan()
     {
-        gameObject.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", Color.red);
+        // Switch model
+        normalModel.SetActive(false);
+        burningModel.SetActive(true);
+
+        // 5 second of burn
         yield return new WaitForSeconds(5.0f);
+
+        // Slowly turn transparent and then be destroyed
+        float elapsedTime = 0.0f;
+        Color baseColor = burningModel.GetComponent<MeshRenderer>().material.color;
+        Color finalColor = new Color(baseColor.r, baseColor.g, baseColor.b, 0.0f);
+        while (elapsedTime < 2.0f)
+        {
+            burningModel.GetComponent<MeshRenderer>().material.color = Color.Lerp(baseColor, finalColor, (elapsedTime / 2.0f));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
         Destroy(gameObject);
     }
 }

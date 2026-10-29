@@ -1,12 +1,12 @@
-using System.Collections;
 using UnityEngine;
 
-public class FlamableVial : MonoBehaviour, IInteractable, IItem
+public class Item : MonoBehaviour, IInteractable, IItem
 {
+    [SerializeField] private ItemType type = ItemType.Normal;
     private bool _isPicked = false;
     private GameObject player = null;
     public InteractType Type => InteractType.PickItem;
-    public ItemType ItemType => ItemType.Flamable;
+    public ItemType ItemType => type;
 
     public bool CanInteract()
     {
