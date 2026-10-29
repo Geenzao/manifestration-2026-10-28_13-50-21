@@ -15,6 +15,6 @@ public interface IInteractable
     // Do the interaction
     public void Interact(PlayerInteractor interactor);
     // Throw an interactable
-    public void Throw(Vector2 dir, float throwPower);
+    public void Throw(Vector3 dir, float throwPower);
     public void RemoveInteractable();
 }

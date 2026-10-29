@@ -612,8 +612,8 @@ MonoBehaviour:
   _interactableMask:
     serializedVersion: 2
     m_Bits: 512
-  _interactDistance: 1
-  _throwPower: 5
+  _interactDistance: 1.5
+  _throwPower: 15
 --- !u!1 &144342746
 GameObject:
   m_ObjectHideFlags: 0

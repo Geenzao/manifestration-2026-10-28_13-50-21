@@ -31,7 +31,7 @@ public class Sign : MonoBehaviour, IInteractable
         }
     }
 
-    public void Throw(Vector2 dir, float throwPower)
+    public void Throw(Vector3 dir, float throwPower)
     {
         return;
     }

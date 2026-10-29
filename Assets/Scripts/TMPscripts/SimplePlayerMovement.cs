@@ -22,7 +22,6 @@ public class SimplePlayerMovement : MonoBehaviour
         if (ctx.phase == InputActionPhase.Performed)
         {
             _moveDir = ctx.ReadValue<Vector2>();
-            interactor.SetThrowDirection(_moveDir);
         }
         else if (ctx.phase == InputActionPhase.Canceled)
         {

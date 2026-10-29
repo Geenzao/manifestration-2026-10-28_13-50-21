@@ -5,10 +5,9 @@ using UnityEngine.InputSystem;
 public class PlayerInteractor : MonoBehaviour
 {
     [SerializeField] private LayerMask _interactableMask;
-    [SerializeField] private float _interactDistance = 1.0f;
-    [SerializeField] private float _throwPower = 5.0f;
+    [SerializeField] private float _interactDistance = 1.5f;
+    [SerializeField] private float _throwPower = 15.0f;
     private IInteractable _heldItem;
-    private Vector2 _throwDir;
 
     // On interact key pressed, do stuff based on the type of the interactable
     public void Interact()
@@ -74,16 +73,10 @@ public class PlayerInteractor : MonoBehaviour
         _heldItem = null;
     }
 
-    // Set the throw direction (player direction)
-    public void SetThrowDirection(Vector2 dir)
-    {
-        _throwDir = dir;
-    }
-
     // Throw the held item
     private void ThrowItem()
     {
-        _heldItem.Throw(_throwDir, _throwPower);
+        _heldItem.Throw(transform.forward, _throwPower);
         _heldItem = null;
     }
 }
