@@ -4,11 +4,30 @@ using UnityEngine.Events;
 
 public class ObjectifManager : MonoBehaviour
 {
+    public static ObjectifManager Instance { get; private set; }
+
     [SerializeField] private List<Objectif> objectifs;
     [SerializeField] private ObjectifsUI objectifsUI;
     public UnityEvent onTousObjectifsTermines;
     private List<Objectif> objectifsCopies = new List<Objectif>();
     private bool objectifsTerminesNotifie;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance == this)
+            Instance = null;
+    }
 
     public void AddObjectifs(int amount)
     {

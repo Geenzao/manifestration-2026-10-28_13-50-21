@@ -3,7 +3,8 @@ using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private ObjectifManager objectifManager;
+    public static GameManager Instance { get; private set; }
+
     [SerializeField] private Chrono chrono;
 
     public UnityEvent onWin;
@@ -13,14 +14,31 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
+
+    private void Start()
+    {
         chrono.onTermine.AddListener(Lose);
-        objectifManager.onTousObjectifsTermines.AddListener(Win);
+        ObjectifManager.Instance.onTousObjectifsTermines.AddListener(Win);
     }
 
     private void OnDestroy()
     {
-        chrono.onTermine.RemoveListener(Lose);
-        objectifManager.onTousObjectifsTermines.RemoveListener(Win);
+        if (chrono != null)
+            chrono.onTermine.RemoveListener(Lose);
+
+        if (ObjectifManager.Instance != null)
+            ObjectifManager.Instance.onTousObjectifsTermines.RemoveListener(Win);
+
+        if (Instance == this)
+            Instance = null;
     }
 
     public void StartRound(int objectiveAmount)
@@ -28,7 +46,7 @@ public class GameManager : MonoBehaviour
         if (IsRoundStarted) return;
 
         ResetRound();
-        objectifManager.AddObjectifs(objectiveAmount);
+        ObjectifManager.Instance.AddObjectifs(objectiveAmount);
         chrono.Demarrer();
         IsRoundStarted = true;
     }
@@ -51,7 +69,7 @@ public class GameManager : MonoBehaviour
 
     private void ResetRound()
     {
-        objectifManager.ClearObjectives(); // détruit les copies et vide l'UI
+        ObjectifManager.Instance.ClearObjectives(); // détruit les copies et vide l’UI
         chrono.Reinitialiser();            // remet le temps et le texte à zéro
     }
 }
