@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,7 +6,9 @@ public class PlayerInteractor : MonoBehaviour
 {
     [SerializeField] private LayerMask _interactableMask;
     [SerializeField] private float _interactDistance = 1.0f;
-    private IInteractable _pickedItem;
+    [SerializeField] private float _throwPower = 5.0f;
+    private IInteractable _heldItem;
+    private Vector2 _throwDir;
 
     // On interact key pressed, do stuff based on the type of the interactable
     public void Interact(InputAction.CallbackContext ctx)
@@ -15,31 +18,26 @@ public class PlayerInteractor : MonoBehaviour
             // Interact if something in range
             if (ClosestInteractable(out IInteractable interactable))
             {
-                bool hasInteracted = interactable.Interact(this, _pickedItem, out InteractType type);
-                Debug.Log(type);
-                switch (type)
+                switch (interactable.Type)
                 {
-                    case InteractType.Failed:
-                        break;
                     case InteractType.Interact:
+                        interactable.Interact(this);
                         break;
                     case InteractType.PickItem:
-                        _pickedItem = interactable;
+                        if ((_heldItem == null) && (interactable is IItem))
+                        {
+                            interactable.Interact(this);
+                            _heldItem = interactable;
+                        }
+                        else
+                        {
+                            ThrowItem();
+                        }
                         break;
-                }
-                // If no succesfull interaction and got something to put down
-                if (!hasInteracted && _pickedItem != null)
-                {
-                    _pickedItem.Interact(this, _pickedItem, out InteractType _);
-                    _pickedItem = null;
                 }
             }
             // If no interaction and got something to put down
-            else if (_pickedItem != null)
-            {
-                _pickedItem.Interact(this, _pickedItem, out InteractType _);
-                _pickedItem = null;
-            }
+            else if (_heldItem != null) ThrowItem();
         }
     }
 
@@ -64,5 +62,31 @@ public class PlayerInteractor : MonoBehaviour
             }
         }
         return interactable != null;
+    }
+
+    // Return the held item
+    public IItem GetPickedItem()
+    {
+        return _heldItem as IItem;
+    }
+
+    // Use the held item (destroy it)
+    public void UsePickedItem()
+    {
+        _heldItem.RemoveInteractable();
+        _heldItem = null;
+    }
+
+    // Set the throw direction (player direction)
+    public void SetThrowDirection(Vector2 dir)
+    {
+        _throwDir = dir;
+    }
+
+    // Throw the held item
+    private void ThrowItem()
+    {
+        _heldItem.Throw(_throwDir, _throwPower);
+        _heldItem = null;
     }
 }
