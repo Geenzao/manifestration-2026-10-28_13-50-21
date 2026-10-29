@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     {
         chrono.onTermine.AddListener(Lose);
         ObjectifManager.Instance.onTousObjectifsTermines.AddListener(Win);
+        StartRound(10);
     }
 
     private void OnDestroy()

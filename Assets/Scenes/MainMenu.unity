@@ -587,8 +587,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3025968687110120564, guid: f0bdb605a53bec84dbbba92ff59bd76f, type: 3}
+      insertIndex: 5
+      addedObject: {fileID: 50744802}
   m_SourcePrefab: {fileID: 100100000, guid: f0bdb605a53bec84dbbba92ff59bd76f, type: 3}
+--- !u!1 &50744801 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3025968687110120564, guid: f0bdb605a53bec84dbbba92ff59bd76f, type: 3}
+  m_PrefabInstance: {fileID: 50744800}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &50744802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50744801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91ed9e7b8aaa704c8a9d0ee8010fff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
+  _interactableMask:
+    serializedVersion: 2
+    m_Bits: 512
+  _interactDistance: 1
+  _throwPower: 5
 --- !u!1 &144342746
 GameObject:
   m_ObjectHideFlags: 0
