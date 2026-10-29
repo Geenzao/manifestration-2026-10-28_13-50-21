@@ -318,7 +318,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5025597435370455757, guid: 2ee2e8abfa802fa47b9252683b084237, type: 3}
       propertyPath: m_Name
-      value: Salle de classe
+      value: Salles de classe
       objectReference: {fileID: 0}
     - target: {fileID: 7526883799216913760, guid: 2ee2e8abfa802fa47b9252683b084237, type: 3}
       propertyPath: m_LocalPosition.x
