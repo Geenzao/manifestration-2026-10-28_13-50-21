@@ -4,11 +4,18 @@ using UnityEngine.SceneManagement;
 public class PlayerInputManager : MonoBehaviour
 {
     public static PlayerInputManager instance;
+    public PlayerManager player;
     PlayerControls playerControls;
+
+    [Header("Movement Input")]
     [SerializeField] Vector2 movementInput;
     public float verticalInput;
     public float horizontalInput;
     public float moveAmount; // This is the total amount of movement we are going to be doing in any direction. It is a combination of both vertical and horizontal input.
+
+    [Header("Action Input")]
+    [SerializeField] bool jumpInput = false;
+
 
     void Awake()
     {
@@ -45,11 +52,16 @@ public class PlayerInputManager : MonoBehaviour
 
             // Takes values when input is performed and give it to our movementInput variable
             playerControls.PlayerMovement.Movement.performed += input => movementInput = input.ReadValue<Vector2>();
+            playerControls.PlayerActions.Jump.performed += input => jumpInput = true;
         }
 
         playerControls.Enable();
     }
 
+    void OnDestroy()
+    {
+        SceneManager.activeSceneChanged -= OnSceneChanged;
+    }
 
     void OnApplicationFocus(bool focus)
     {
@@ -68,6 +80,7 @@ public class PlayerInputManager : MonoBehaviour
     void Update()
     {
         HandleMovementInput();
+        HandleJumpInput();
     }
     void HandleMovementInput()
     {
@@ -87,10 +100,16 @@ public class PlayerInputManager : MonoBehaviour
         {
             moveAmount = 1;
         }
+
+        player.playerAnimatorManager.UpdateMovementValue(moveAmount);
     }
 
-    void OnDestroy()
+    private void HandleJumpInput()
     {
-        SceneManager.activeSceneChanged -= OnSceneChanged;
+        if (jumpInput)
+        {
+            jumpInput = false;
+            player.playerLocomotionManager.AttemptToPerformJump();
+        }
     }
 }

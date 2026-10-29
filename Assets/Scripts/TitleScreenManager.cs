@@ -12,6 +12,8 @@ public class TitleScreenManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI playerName;
     [SerializeField] GameObject settingsPanel;
 
+
+
     void Start()
     {
         // Initialize the first skin and name
@@ -45,6 +47,8 @@ public class TitleScreenManager : MonoBehaviour
         playerSkins[currentSkinIndex].SetActive(true);
 
         playerName.text = playerSkins[currentSkinIndex].name;
+
+        ChangeAvatar();
     }
 
     public void ChoosePreviousSkin()
@@ -54,5 +58,33 @@ public class TitleScreenManager : MonoBehaviour
         playerSkins[currentSkinIndex].SetActive(true);
 
         playerName.text = playerSkins[currentSkinIndex].name;
+
+        ChangeAvatar();
     }
+
+    public void ChangeAvatar()
+    {
+        // Get current skin
+        // Get avatar from its animator
+        // Give avatar to parent (Player) animator
+        GameObject currentSkin = playerSkins[currentSkinIndex];
+        Animator currentSkinAnimator = currentSkin.GetComponent<Animator>();
+        
+        if (currentSkinAnimator != null)
+        {   
+            // Get avatar from the current skin's animator
+            Avatar avatar = currentSkinAnimator.avatar;
+
+            // Get parent
+            GameObject player = currentSkin.transform.parent.gameObject;
+
+            // Get the player's animator
+            Animator playerAnimator = player.GetComponent<Animator>();
+
+            // Assign the correct avatar to the parent animator
+            if (playerAnimator != null)
+                playerAnimator.avatar = avatar;
+        }
+    }
+
 }
