@@ -17,6 +17,7 @@ public class ObjectifsUI : MonoBehaviour
 
     public void AddObjective(Objectif objectif)
     {
+        objectivePanel.SetActive(true);
         GameObject instance = Instantiate(objectivePrefab, objectivePanel.transform);
 
         Ligne ligne = new Ligne();
@@ -42,5 +43,6 @@ public class ObjectifsUI : MonoBehaviour
             Destroy(child.gameObject);
 
         lignes.Clear();
+        objectivePanel.SetActive(false);
     }
 }

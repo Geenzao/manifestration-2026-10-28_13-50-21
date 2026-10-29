@@ -119,6 +119,58 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &97695991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 97695993}
+  - component: {fileID: 97695992}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &97695992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97695991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27f3e0fb892e1374aa5bf56d7a3bc209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  objectifManager: {fileID: 1909645728}
+  chrono: {fileID: 1817257564}
+  onWin:
+    m_PersistentCalls:
+      m_Calls: []
+  onLose:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &97695993
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97695991}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1285.02, y: -0.00003, z: 7249.934}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &335668008
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,7 +523,7 @@ MonoBehaviour:
   texte: {fileID: 1661359702}
   compteARebours: 1
   dureeInitiale: 10
-  demarrerAuLancement: 1
+  demarrerAuLancement: 0
   onTermine:
     m_PersistentCalls:
       m_Calls: []
@@ -514,6 +566,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3c655a84f26b3094b828a2c0c0af91f6, type: 2}
   - {fileID: 11400000, guid: 8da2ea5b4bce0d947946d1bfccc07795, type: 2}
   objectifsUI: {fileID: 9080017904635711816}
+  onTousObjectifsTermines:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1909645729
 Transform:
   m_ObjectHideFlags: 0
@@ -700,13 +755,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8039725205395202093, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
-      propertyPath: m_SizeDelta.x
+    - target: {fileID: 2875286983682826751, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8039725205395202093, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8039725205395202093, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8665644189865411762, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
       propertyPath: m_Name
@@ -760,3 +819,4 @@ SceneRoots:
   - {fileID: 1012278808}
   - {fileID: 1945507107}
   - {fileID: 1909645729}
+  - {fileID: 97695993}

@@ -1,19 +1,19 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ObjectifManager : MonoBehaviour
 {
-    public List<Objectif> objectifs;
-    public ObjectifsUI objectifsUI;
+    [SerializeField] private List<Objectif> objectifs;
+    [SerializeField] private ObjectifsUI objectifsUI;
+    public UnityEvent onTousObjectifsTermines;
     private List<Objectif> objectifsCopies = new List<Objectif>();
-
-    public void Start()
-    {
-        AddObjectifs(5);
-    }
+    private bool objectifsTerminesNotifie;
 
     public void AddObjectifs(int amount)
     {
+        objectifsTerminesNotifie = false;
+
         List<Objectif> disponibles = new List<Objectif>(objectifs);
         disponibles.RemoveAll(m => objectifsCopies.Exists(o => o.objectifID == m.objectifID));
 
@@ -43,6 +43,14 @@ public class ObjectifManager : MonoBehaviour
             obj.currentAmount = Mathf.Min(obj.currentAmount + quantite, obj.requiredAmount);
             objectifsUI.Refresh(obj);
         }
+
+        if (!objectifsTerminesNotifie &&
+            objectifsCopies.Count > 0 &&
+            objectifsCopies.TrueForAll(obj => obj.IsCompleted))
+        {
+            objectifsTerminesNotifie = true;
+            onTousObjectifsTermines?.Invoke();
+        }
     }
 
     public void ClearObjectives()
@@ -51,6 +59,7 @@ public class ObjectifManager : MonoBehaviour
             Destroy(obj);
 
         objectifsCopies.Clear();
+        objectifsTerminesNotifie = false;
         objectifsUI.ClearObjectives();
     }
 }
