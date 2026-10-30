@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ThrashCan : MonoBehaviour, IInteractable
 {
+    [SerializeField] private Objectif objectifSO;
     [SerializeField] private GameObject normalModel;
     [SerializeField] private GameObject burningModel;
     public InteractType Type => InteractType.Interact;
@@ -15,20 +16,21 @@ public class ThrashCan : MonoBehaviour, IInteractable
     public void Interact(PlayerInteractor interactor)
     {
         // If have a flamable object, destroy the thrash can
-        if (interactor.GetPickedItem().ItemType == ItemType.Flamable)
+        if ((interactor.GetPickedItem() != null) && (interactor.GetPickedItem().ItemType == ItemType.Flamable))
         {
             interactor.UsePickedItem();
             RemoveInteractable();
         }
     }
 
-    public void Throw(Vector2 dir, float throwPower)
+    public void Throw(Vector3 dir, float throwPower)
     {
         return;
     }
 
     public void RemoveInteractable()
     {
+        ObjectifManager.Instance.Progresser(objectifSO.objectifID, 1);
         StartCoroutine(BurnTrashcan());
     }
 
@@ -55,11 +57,9 @@ public class ThrashCan : MonoBehaviour, IInteractable
 
         // Slowly turn transparent and then be destroyed
         float elapsedTime = 0.0f;
-        Color baseColor = burningModel.GetComponent<MeshRenderer>().material.color;
-        Color finalColor = new Color(baseColor.r, baseColor.g, baseColor.b, 0.0f);
         while (elapsedTime < 2.0f)
         {
-            burningModel.GetComponent<MeshRenderer>().material.color = Color.Lerp(baseColor, finalColor, (elapsedTime / 2.0f));
+            burningModel.GetComponent<MeshRenderer>().material.SetFloat("_Alpha", (2.0f - elapsedTime) / 2.0f);
             elapsedTime += Time.deltaTime;
             yield return null;
         }

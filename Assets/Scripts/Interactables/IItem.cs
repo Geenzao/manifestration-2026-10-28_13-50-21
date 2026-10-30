@@ -5,6 +5,7 @@ public enum ItemType
     Normal,
     Flamable,
     Pencil,
+    Tool,
 }
 public interface IItem
 {

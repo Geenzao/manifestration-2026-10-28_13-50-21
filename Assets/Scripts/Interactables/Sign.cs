@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class Sign : MonoBehaviour, IInteractable
 {
+    [SerializeField] private Objectif objectifSO;
     [SerializeField] private GameObject normalModel;
+    [SerializeField] private GameObject particle;
     [SerializeField] private TextMeshPro signText;
     [SerializeField] private List<string> normalMessages;
     [SerializeField] private List<string> sabotagedMessages;
@@ -24,20 +26,21 @@ public class Sign : MonoBehaviour, IInteractable
     public void Interact(PlayerInteractor interactor)
     {
         // If have a pencil object, sabotage the sign with
-        if (interactor.GetPickedItem().ItemType == ItemType.Pencil)
+        if ((interactor.GetPickedItem() != null) && (interactor.GetPickedItem().ItemType == ItemType.Pencil))
         {
             interactor.UsePickedItem();
             RemoveInteractable();
         }
     }
 
-    public void Throw(Vector2 dir, float throwPower)
+    public void Throw(Vector3 dir, float throwPower)
     {
         return;
     }
 
     public void RemoveInteractable()
     {
+        ObjectifManager.Instance.Progresser(objectifSO.objectifID, 1);
         StartCoroutine(SabotageSign());
     }
 
@@ -45,19 +48,18 @@ public class Sign : MonoBehaviour, IInteractable
     {
         // Sabotaged the text
         signText.text = sabotagedMessages[Random.Range(0, sabotagedMessages.Count)];
+        particle.SetActive(true);
 
         // 5 second pause
         yield return new WaitForSeconds(5.0f);
 
         // Slowly turn transparent and then be destroyed
         float elapsedTime = 0.0f;
-        Color baseColor = normalModel.GetComponent<MeshRenderer>().material.color;
         Color textBaseColor = signText.color;
-        Color finalColor = new Color(baseColor.r, baseColor.g, baseColor.b, 0.0f);
         Color textFinalColor = new Color(textBaseColor.r, textBaseColor.g, textBaseColor.b, 0.0f);
         while (elapsedTime < 2.0f)
         {
-            normalModel.GetComponent<MeshRenderer>().material.color = Color.Lerp(baseColor, finalColor, (elapsedTime / 2.0f));
+            normalModel.GetComponent<MeshRenderer>().material.SetFloat("_Alpha", (2.0f - elapsedTime) / 2.0f);
             signText.color = Color.Lerp(textBaseColor, textFinalColor, (elapsedTime / 2.0f));
             elapsedTime += Time.deltaTime;
             yield return null;

@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_TrashCan
-    second: {fileID: 2100000, guid: 47b903806b9774e4e8618774eeb4df72, type: 2}
+    second: {fileID: 2100000, guid: ef26557e279edc64e94fb7553e42ff0b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
