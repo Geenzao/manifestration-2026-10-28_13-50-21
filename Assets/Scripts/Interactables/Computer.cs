@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Computer : MonoBehaviour, IInteractable
@@ -49,8 +50,8 @@ public class Computer : MonoBehaviour, IInteractable
         float elapsedTime = 0.0f;
         while (elapsedTime < 5.0f)
         {
-            screenText.text = "PARCOURSUP\nVoeux envoyés : " + (wishNmb - elapsedTime * 2.0f) + "\n...suppression...";
-            if ((wishNmb - elapsedTime * 2.0f) <= 0.0f)
+            screenText.text = "PARCOURSUP\nVoeux envoyés : " + (int)Mathf.Max(0.0f, Mathf.Round(wishNmb - elapsedTime * 2.0f)) + "\n...suppression...";
+            if ((wishNmb - elapsedTime * 2.0f) <= 0.5f)
             {
                 screenText.color = Color.red;
             }

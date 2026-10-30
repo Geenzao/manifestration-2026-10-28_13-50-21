@@ -4,10 +4,16 @@ using UnityEngine.InputSystem;
 
 public class PlayerInteractor : MonoBehaviour
 {
+    [SerializeField] private SphereCollider _interactTrigger;
     [SerializeField] private LayerMask _interactableMask;
     [SerializeField] private float _interactDistance = 1.5f;
     [SerializeField] private float _throwPower = 15.0f;
     private IInteractable _heldItem;
+
+    private void Start()
+    {
+        if (_interactTrigger != null) _interactTrigger.radius = _interactDistance;
+    }
 
     // On interact key pressed, do stuff based on the type of the interactable
     public void Interact()
@@ -78,5 +84,59 @@ public class PlayerInteractor : MonoBehaviour
     {
         _heldItem.Throw(transform.forward, _throwPower);
         _heldItem = null;
+
+        // Update interaction notif
+        if (UIManager.Instance == null) return;
+        if (ClosestInteractable(out IInteractable interactable))
+        {
+            switch (interactable.Type)
+            {
+                case InteractType.Interact:
+                    UIManager.Instance.interactNotif.EnableNotif(InteractType.Interact);
+                    break;
+                case InteractType.PickItem:
+                    UIManager.Instance.interactNotif.EnableNotif(InteractType.PickItem);
+                    break;
+            }
+        }
+        else
+        {
+            UIManager.Instance.interactNotif.DisableNotif();
+        }
+    }
+
+    // If a interactable in range, check to make visible the interact notification
+    private void OnTriggerEnter(Collider other)
+    {
+        if (UIManager.Instance == null) return;
+
+        if (ClosestInteractable(out IInteractable interactable))
+        {
+            if (interactable.Type == InteractType.Interact)
+            {
+                UIManager.Instance.interactNotif.EnableNotif(InteractType.Interact);
+            }
+            else if ((interactable.Type == InteractType.PickItem) && (_heldItem == null))
+            {
+                UIManager.Instance.interactNotif.EnableNotif(InteractType.PickItem);
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (UIManager.Instance == null) return;
+
+        if (other.gameObject.TryGetComponent<IInteractable>(out IInteractable interactable))
+        {
+            if (_heldItem != null)
+            {
+                UIManager.Instance.interactNotif.EnableNotif(InteractType.ThrowItem);
+            }
+            else
+            {
+                UIManager.Instance.interactNotif.DisableNotif();
+            }
+        }
     }
 }

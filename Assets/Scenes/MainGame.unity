@@ -176,6 +176,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08c64fdeda16da74c96f2b6aa652352b, type: 3}
+--- !u!114 &105679713 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3279768757120074859, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
+  m_PrefabInstance: {fileID: 1348524937}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &105679714 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7097259992007418306, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
+  m_PrefabInstance: {fileID: 1348524937}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &177479476
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,10 +1060,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8665644189865411762, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1348524944}
+    - targetCorrespondingSourceObject: {fileID: 8665644189865411762, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1348524943}
     - targetCorrespondingSourceObject: {fileID: 8665644189865411762, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1348524942}
+    - targetCorrespondingSourceObject: {fileID: 8665644189865411762, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1348524945}
   m_SourcePrefab: {fileID: 100100000, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
 --- !u!114 &1348524938 stripped
 MonoBehaviour:
@@ -1108,6 +1130,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Objectifs
   objectivePanel: {fileID: 1348524940}
   objectivePrefab: {fileID: 1654965359384281438, guid: ffb72e03ec798b34abcc6b8d811e8c9a, type: 3}
+--- !u!114 &1348524944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348524941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad30329074aebed428dbf5367da13132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIManager
+  interactNotif: {fileID: 0}
+--- !u!114 &1348524945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348524941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a50503f17b0374149891708bdce78c63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractNotif
+  notifUI: {fileID: 105679714}
+  notifText: {fileID: 105679713}
 --- !u!1 &1708605320
 GameObject:
   m_ObjectHideFlags: 0

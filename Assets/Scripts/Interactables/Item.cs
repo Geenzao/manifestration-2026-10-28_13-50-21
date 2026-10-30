@@ -13,7 +13,7 @@ public class Item : MonoBehaviour, IInteractable, IItem
 
     public bool CanInteract()
     {
-        return !_isPicked;
+        return !_isPicked && GetComponent<Collider>().excludeLayers == 0;
     }
 
     public void Interact(PlayerInteractor interactor)
@@ -23,6 +23,7 @@ public class Item : MonoBehaviour, IInteractable, IItem
         {
             player = interactor.gameObject;
             Physics.IgnoreCollision(GetComponent<Collider>(), player.GetComponent<Collider>(), true);
+            GetComponent<Collider>().excludeLayers = LayerMask.GetMask("Player");
             _isPicked = true;
             GetComponent<Rigidbody>().freezeRotation = true;
         }
@@ -61,6 +62,7 @@ public class Item : MonoBehaviour, IInteractable, IItem
     {
         yield return new WaitForSeconds(0.1f);
         Physics.IgnoreCollision(GetComponent<Collider>(), col, false);
+        GetComponent<Collider>().excludeLayers = 0;
     }
 
     public void RemoveInteractable()

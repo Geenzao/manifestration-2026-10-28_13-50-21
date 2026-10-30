@@ -4,6 +4,7 @@ public enum InteractType
 {
     Interact,
     PickItem,
+    ThrowItem,
 }
 
 public interface IInteractable
