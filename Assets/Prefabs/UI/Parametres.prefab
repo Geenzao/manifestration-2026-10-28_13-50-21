@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 655332650062064208}
   - component: {fileID: 7364826925927350893}
   m_Layer: 5
-  m_Name: closeButton
+  m_Name: CloseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -194,19 +194,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 655332650062064208}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3296674105980095908}
-        m_TargetAssemblyTypeName: Parametres, Assembly-CSharp
-        m_MethodName: Close
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1408658320399554199
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,7 +421,7 @@ GameObject:
   - component: {fileID: 7070228443981848609}
   - component: {fileID: 5001549499020564886}
   m_Layer: 5
-  m_Name: fond
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -508,7 +496,7 @@ GameObject:
   - component: {fileID: 7528911837816768123}
   - component: {fileID: 5446677264523323335}
   m_Layer: 5
-  m_Name: Titre
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -773,7 +761,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3296674105980095908}
+      - m_Target: {fileID: 4843290108805059747}
         m_TargetAssemblyTypeName: Parametres, Assembly-CSharp
         m_MethodName: SetSFXVolume
         m_Mode: 4
@@ -796,7 +784,7 @@ GameObject:
   - component: {fileID: 2310580138748462387}
   - component: {fileID: 3490085811067306439}
   - component: {fileID: 7663191283180063483}
-  - component: {fileID: 3296674105980095908}
+  - component: {fileID: 4843290108805059747}
   m_Layer: 5
   m_Name: Parametres
   m_TagString: Untagged
@@ -864,7 +852,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3296674105980095908
+--- !u!114 &4843290108805059747
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -875,11 +863,10 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4df04cd2b3b30ca4db3e14f4b7e4917e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
-  mixer: {fileID: 24100000, guid: 99500a455df3b844c97bd199f707d033, type: 2}
-  musicSlider: {fileID: 4917080219381874310}
-  sfxSlider: {fileID: 7007700583001762291}
-  quitButton: {fileID: 7364826925927350893}
+  m_EditorClassIdentifier: Assembly-CSharp::Parametres
+  mixer: {fileID: 0}
+  musicSlider: {fileID: 0}
+  sfxSlider: {fileID: 0}
 --- !u!1 &4385762973817027032
 GameObject:
   m_ObjectHideFlags: 0
@@ -1391,10 +1378,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3296674105980095908}
+      - m_Target: {fileID: 4843290108805059747}
         m_TargetAssemblyTypeName: Parametres, Assembly-CSharp
         m_MethodName: SetMusicVolume
-        m_Mode: 0
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1415,7 +1402,7 @@ GameObject:
   - component: {fileID: 8039254969352529989}
   - component: {fileID: 6448213625557852827}
   m_Layer: 5
-  m_Name: panel
+  m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
