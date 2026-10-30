@@ -11,44 +11,6 @@ public class Parametres : MonoBehaviour
 
     // L'audio mixer utilisé pour gérer le volume du son
     [SerializeField] private AudioMixer mixer;
-    // Le slider de la musique
-    [SerializeField] private Slider musicSlider;
-    // Le slider des SFX
-    [SerializeField] private Slider sfxSlider;
-    [SerializeField] private Button quitButton;
-
-    private void Awake()
-    {
-        if (musicSlider != null)
-        {
-            mixer.GetFloat(MusicParamName, out float musicDb);
-            musicSlider.value = Mathf.Pow(10f, musicDb / 20f);
-            //Quand la valeur du slider est changer on appelle SetMusicVolume avec la nouvelle valeur comme parametre
-            musicSlider.onValueChanged.AddListener(SetMusicVolume);
-        }
-
-        if (sfxSlider != null)
-        {
-            mixer.GetFloat(SfxParamName, out float musicDb);
-            sfxSlider.value = Mathf.Pow(10f, musicDb / 20f);
-            //Quand la valeur du slider est changer on appelle SetSFXVolume avec la nouvelle valeur comme parametre
-            sfxSlider.onValueChanged.AddListener(SetSFXVolume);
-        }
-        quitButton.onClick.AddListener(Close);
-    }
-
-    private void OnDestroy()
-    {
-        if (musicSlider != null)
-        {
-            musicSlider.onValueChanged.RemoveListener(SetMusicVolume);
-        }
-
-        if (sfxSlider != null)
-        {
-            sfxSlider.onValueChanged.RemoveListener(SetSFXVolume);
-        }
-    }
 
     public void SetMusicVolume(float value)
     {
@@ -82,8 +44,9 @@ public class Parametres : MonoBehaviour
         return Mathf.Log10(value) * 20f;
     }
 
-    private void Close()
+    public void Close()
     {
         gameObject.SetActive(false);
+        PlayerUIManager.instance.isUIOpen = false;
     }
 }

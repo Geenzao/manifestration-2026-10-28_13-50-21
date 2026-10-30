@@ -16,6 +16,9 @@ public class PlayerInputManager : MonoBehaviour
     [Header("Action Input")]
     [SerializeField] bool jumpInput = false;
 
+    [Header("UI Input")]
+    [SerializeField] bool settingsInput = false;
+
 
     void Awake()
     {
@@ -32,14 +35,13 @@ public class PlayerInputManager : MonoBehaviour
     }
 
     void OnSceneChanged(Scene previousScene, Scene currentScene)
-    {   
+    {
         if (currentScene.name == "MainMenu")
         {
             instance.enabled = false;
         }
         else
-        {   
-            Debug.Log("Enabling PlayerInputManager for scene: " + currentScene.name);
+        {
             instance.enabled = true;
         }
     }
@@ -54,6 +56,7 @@ public class PlayerInputManager : MonoBehaviour
             playerControls.PlayerMovement.Movement.performed += input => movementInput = input.ReadValue<Vector2>();
             playerControls.PlayerActions.Jump.performed += input => jumpInput = true;
             playerControls.PlayerActions.Interact.performed += input => GetComponent<PlayerInteractor>().Interact();
+            playerControls.PlayerUI.OpenSettings.performed += input => settingsInput = true;
         }
 
         playerControls.Enable();
@@ -82,9 +85,13 @@ public class PlayerInputManager : MonoBehaviour
     {
         HandleMovementInput();
         HandleJumpInput();
+        HandleSettingsInput();
     }
     void HandleMovementInput()
     {
+        if (PlayerUIManager.instance.isUIOpen)
+            return;
+
         verticalInput = movementInput.y;
         horizontalInput = movementInput.x;
 
@@ -110,7 +117,21 @@ public class PlayerInputManager : MonoBehaviour
         if (jumpInput)
         {
             jumpInput = false;
+
+            if (PlayerUIManager.instance.isUIOpen)
+                return;
+
             player.playerLocomotionManager.AttemptToPerformJump();
         }
     }
+
+    private void HandleSettingsInput()
+    {
+        if (settingsInput)
+        {
+            settingsInput = false;
+            PlayerUIManager.instance.HandleSettings();
+        }
+    }
+
 }
