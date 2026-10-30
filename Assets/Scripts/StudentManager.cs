@@ -6,8 +6,8 @@ public class StudentManager : MonoBehaviour
     [SerializeField] string state;
     Animator animator;
 
-    List<string> standingStates = new List<string> { "Idle_01", "Idle_02"};
-    List<string> sittingStates = new List<string> { "Sitting_Idle_01", "Sitting_Idle_02" };
+    List<string> standingStates = new List<string> { "Idle_01", "Idle_02", "Idle_03"};
+    List<string> sittingStates = new List<string> { "Sitting_Idle_01", "Sitting_Idle_02", "Sitting_Idle_03"};
 
 
     void Start()

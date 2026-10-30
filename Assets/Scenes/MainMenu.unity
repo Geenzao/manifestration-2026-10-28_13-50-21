@@ -1230,11 +1230,6 @@ Transform:
   - {fileID: 1816481555}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &760764426 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8617142978185119755, guid: f86b971224e53ae4bab50633b0a523b6, type: 3}
-  m_PrefabInstance: {fileID: 7967460917509390453}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &765298739
 GameObject:
   m_ObjectHideFlags: 0
@@ -3923,6 +3918,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26bd4fa200f6c7146b1e15384616f44d, type: 3}
+--- !u!1 &2041303181 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7360257684657882105, guid: f86b971224e53ae4bab50633b0a523b6, type: 3}
+  m_PrefabInstance: {fileID: 7967460917509390453}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2065274962
 GameObject:
   m_ObjectHideFlags: 0
@@ -4298,35 +4298,7 @@ PrefabInstance:
     - target: {fileID: 625321490623440001, guid: f86b971224e53ae4bab50633b0a523b6, type: 3}
       propertyPath: creditsUI
       value: 
-      objectReference: {fileID: 760764426}
-    - target: {fileID: 997556285786604083, guid: f86b971224e53ae4bab50633b0a523b6, type: 3}
-      propertyPath: m_Name
-      value: CloseButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 1285897375342008321, guid: f86b971224e53ae4bab50633b0a523b6, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786719195279284461, guid: f86b971224e53ae4bab50633b0a523b6, type: 3}
-      propertyPath: m_Name
-      value: Background
-      objectReference: {fileID: 0}
-    - target: {fileID: 2103292262547924920, guid: f86b971224e53ae4bab50633b0a523b6, type: 3}
-      propertyPath: m_Name
-      value: SFX
-      objectReference: {fileID: 0}
-    - target: {fileID: 2251699099961813512, guid: f86b971224e53ae4bab50633b0a523b6, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2295465536215015935, guid: f86b971224e53ae4bab50633b0a523b6, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2625536523636482113, guid: f86b971224e53ae4bab50633b0a523b6, type: 3}
-      propertyPath: m_Name
-      value: Title
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2041303181}
     - target: {fileID: 4163311185773062480, guid: f86b971224e53ae4bab50633b0a523b6, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4407,6 +4379,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4415303425998358033, guid: f86b971224e53ae4bab50633b0a523b6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 779931822}
+    - target: {fileID: 4415303425998358033, guid: f86b971224e53ae4bab50633b0a523b6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HandleCredits
+      objectReference: {fileID: 0}
     - target: {fileID: 4718215595788852091, guid: f86b971224e53ae4bab50633b0a523b6, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
@@ -4423,10 +4403,6 @@ PrefabInstance:
       propertyPath: musicSlider
       value: 
       objectReference: {fileID: 1922264933}
-    - target: {fileID: 6593908947671901991, guid: f86b971224e53ae4bab50633b0a523b6, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7166244535914801040, guid: f86b971224e53ae4bab50633b0a523b6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -4459,11 +4435,7 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8200094749741820905, guid: f86b971224e53ae4bab50633b0a523b6, type: 3}
-      propertyPath: m_Name
-      value: Panel
-      objectReference: {fileID: 0}
-    - target: {fileID: 8617142978185119755, guid: f86b971224e53ae4bab50633b0a523b6, type: 3}
+    - target: {fileID: 7360257684657882105, guid: f86b971224e53ae4bab50633b0a523b6, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
