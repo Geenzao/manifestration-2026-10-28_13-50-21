@@ -54,6 +54,8 @@ MonoBehaviour:
       - {fileID: 0}
       - {fileID: 0}
       - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
     - prefab: {fileID: 2617345809520769905, guid: 08c64fdeda16da74c96f2b6aa652352b, type: 3}
       positions:
       - {fileID: 0}
@@ -72,6 +74,8 @@ MonoBehaviour:
       - {fileID: 0}
     - prefab: {fileID: 2617345809520769905, guid: 158db8e87f77d454fb17f15925691ec4, type: 3}
       positions:
+      - {fileID: 0}
+      - {fileID: 0}
       - {fileID: 0}
       - {fileID: 0}
       - {fileID: 0}
@@ -102,6 +106,7 @@ MonoBehaviour:
     objets:
     - prefab: {fileID: 3529500877060066932, guid: e99d733313868504aa65bf0462f7c56b, type: 3}
       positions:
+      - {fileID: 0}
       - {fileID: 0}
       - {fileID: 0}
       - {fileID: 0}
