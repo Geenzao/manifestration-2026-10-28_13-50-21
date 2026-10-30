@@ -72,7 +72,7 @@ using UnityEngine.InputSystem.Utilities;
 /// }
 /// </code>
 /// </example>
-public partial class @PlayerControls : IInputActionCollection2, IDisposable
+public partial class @PlayerControls: IInputActionCollection2, IDisposable
 {
     /// <summary>
     /// Provides access to the underlying asset instance.
@@ -206,35 +206,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Interact"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Player UI"",
-            ""id"": ""21a61125-5503-48f6-b536-364b3d81cb66"",
-            ""actions"": [
-                {
-                    ""name"": ""OpenSettings"",
-                    ""type"": ""Button"",
-                    ""id"": ""14224845-da13-43be-b704-2df296d8f749"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false,
-                    ""priority"": 0
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""8b60a99a-6903-47e8-a134-7efa5a763066"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""OpenSettings"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -695,21 +666,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnInteract(InputAction.CallbackContext context);
-    }
-    /// <summary>
-    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Player UI" which allows adding and removing callbacks.
-    /// </summary>
-    /// <seealso cref="PlayerUIActions.AddCallbacks(IPlayerUIActions)" />
-    /// <seealso cref="PlayerUIActions.RemoveCallbacks(IPlayerUIActions)" />
-    public interface IPlayerUIActions
-    {
-        /// <summary>
-        /// Method invoked when associated input action "OpenSettings" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnOpenSettings(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Player UI" which allows adding and removing callbacks.
