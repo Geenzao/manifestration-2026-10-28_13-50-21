@@ -13,6 +13,11 @@ public class PlayerInputManager : MonoBehaviour
     public float horizontalInput;
     public float moveAmount; // This is the total amount of movement we are going to be doing in any direction. It is a combination of both vertical and horizontal input.
 
+    [Header("Camera Input")]
+    [SerializeField] Vector2 cameraInput;
+    public float cameraVerticalInput;
+    public float cameraHorizontalInput;
+
     [Header("Action Input")]
     [SerializeField] bool jumpInput = false;
 
@@ -39,10 +44,12 @@ public class PlayerInputManager : MonoBehaviour
         if (currentScene.name == "MainMenu")
         {
             instance.enabled = false;
+            Cursor.visible = true;
         }
         else
         {
             instance.enabled = true;
+            Cursor.visible = false;
         }
     }
 
@@ -53,7 +60,11 @@ public class PlayerInputManager : MonoBehaviour
             playerControls = new PlayerControls();
 
             // Takes values when input is performed and give it to our movementInput variable
+            
             playerControls.PlayerMovement.Movement.performed += input => movementInput = input.ReadValue<Vector2>();
+            playerControls.PlayerCamera.Movement.performed += input => cameraInput = input.ReadValue<Vector2>();
+            playerControls.PlayerCamera.Movement.canceled += input => cameraInput = Vector2.zero;
+
             playerControls.PlayerActions.Jump.performed += input => jumpInput = true;
             playerControls.PlayerActions.Interact.performed += input => GetComponent<PlayerInteractor>().Interact();
             playerControls.PlayerUI.OpenSettings.performed += input => settingsInput = true;
@@ -84,6 +95,7 @@ public class PlayerInputManager : MonoBehaviour
     void Update()
     {
         HandleMovementInput();
+        HandleCameraInput();
         HandleJumpInput();
         HandleSettingsInput();
     }
@@ -110,6 +122,15 @@ public class PlayerInputManager : MonoBehaviour
         }
 
         player.playerAnimatorManager.UpdateMovementValue(moveAmount);
+    }
+
+    void HandleCameraInput()
+    {
+        if (PlayerUIManager.instance.isUIOpen)
+            return;
+
+        cameraVerticalInput = cameraInput.y;
+        cameraHorizontalInput = cameraInput.x;
     }
 
     private void HandleJumpInput()

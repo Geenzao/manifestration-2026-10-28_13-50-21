@@ -10,9 +10,9 @@ public class PlayerCamera : MonoBehaviour
 
     // Tweak camera performance
     [Header("Camera Settings")]
-    private float cameraSmoothSpeed = 1; // The bigger this value is, the slower the camera will reach the target position.
-    [SerializeField] float leftAndRightRotationSpeed = 180;
-    [SerializeField] float upAndDownRotationSpeed = 180;
+    private float cameraSmoothSpeed = 1f; // The bigger this value is, the slower the camera will reach the target position.
+    [SerializeField] float leftAndRightRotationSpeed = 220;
+    [SerializeField] float upAndDownRotationSpeed = 220;
     [SerializeField] float minimumPivot = -10; // Lowest point player can look down
     [SerializeField] float maximumPivot = 15; // Highest point player can look up
     [SerializeField] float cameraCollisionRadius = 0.2f; // The radius of the sphere that will be used to check for collisions with the environment.
@@ -69,11 +69,11 @@ public class PlayerCamera : MonoBehaviour
     {   
         // If we want, we could add an input to control the camera with the mouse, but for now, we will just use the player's movement input to control the camera's rotation.
         // It would work the same way as the player's movement input, but we would need to add a new input action for the camera's rotation. For now, we will just use the player's movement input to control the camera's rotation.
-        leftAndRightLookAngle += PlayerInputManager.instance.horizontalInput * leftAndRightRotationSpeed * Time.deltaTime; // Rotate left and right
+        leftAndRightLookAngle += PlayerInputManager.instance.cameraHorizontalInput * leftAndRightRotationSpeed * Time.deltaTime; // Rotate left and right
 
         // If we switch to mouse reading inputs, we would uncomment the following code:
-        // upAndDownLookAngle -= PlayerInputManager.instance.verticalInput * upAndDownRotationSpeed * Time.deltaTime; // Rotate up and down
-        // upAndDownLookAngle = Mathf.Clamp(upAndDownLookAngle, minimumPivot, maximumPivot); // Clamp the up and down rotation so the player can't look too far up or down
+        upAndDownLookAngle -= PlayerInputManager.instance.cameraVerticalInput * upAndDownRotationSpeed * Time.deltaTime; // Rotate up and down
+        upAndDownLookAngle = Mathf.Clamp(upAndDownLookAngle, minimumPivot, maximumPivot); // Clamp the up and down rotation so the player can't look too far up or down
 
         Vector3 cameraRotation = Vector3.zero;
         Quaternion targetRotation;
@@ -84,10 +84,10 @@ public class PlayerCamera : MonoBehaviour
         transform.rotation = targetRotation;
 
         // Rotate the camera pivot (up and down) // Only if we switch to mouse reading inputs
-        // cameraRotation = Vector3.zero;
-        // cameraRotation.x = upAndDownLookAngle;
-        // targetRotation = Quaternion.Euler(cameraRotation);
-        // cameraPivotTransform.localRotation = targetRotation;
+        cameraRotation = Vector3.zero;
+        cameraRotation.x = upAndDownLookAngle;
+        targetRotation = Quaternion.Euler(cameraRotation);
+        cameraPivotTransform.localRotation = targetRotation;
     }
 
     void HandleCollisions()
