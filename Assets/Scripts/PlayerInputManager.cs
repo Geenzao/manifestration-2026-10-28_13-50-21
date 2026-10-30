@@ -44,12 +44,10 @@ public class PlayerInputManager : MonoBehaviour
         if (currentScene.name == "MainMenu")
         {
             instance.enabled = false;
-            Cursor.visible = true;
         }
         else
         {
             instance.enabled = true;
-            Cursor.visible = false;
         }
     }
 
