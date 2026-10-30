@@ -26,13 +26,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1126876538771397592}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.04, z: 0}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.007, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3079626472350498416}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &3654604295351316651
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -99,7 +99,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3079626472350498416}
-  - component: {fileID: 5878474593041721028}
+  - component: {fileID: 5230316743654690632}
   - component: {fileID: 8792375298518785090}
   - component: {fileID: 293452831700457898}
   m_Layer: 9
@@ -118,15 +118,15 @@ Transform:
   m_GameObject: {fileID: 2617345809520769905}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.328, y: 0.47, z: -3.05796}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4643229021247710555}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &5878474593041721028
-SphereCollider:
+--- !u!65 &5230316743654690632
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -144,8 +144,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.055
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.012185043, y: 0.0134784235, z: 0.20591104}
+  m_Center: {x: -0.0006642565, y: 0.006936677, z: 0.007122755}
 --- !u!54 &8792375298518785090
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -171,7 +171,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &293452831700457898
 MonoBehaviour:
@@ -186,3 +186,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
   type: 2
+  meshes:
+  - {fileID: -3623126558169397096, guid: 68afe4122a72a504b8fb0f7fc03b7ba3, type: 3}
+  - {fileID: 2828378283139155766, guid: 6c9bf52b296922a4e9fcba37eb5a9318, type: 3}
+  - {fileID: 1019195442929888010, guid: 08c30d056a979884e8325906910941c8, type: 3}
+  - {fileID: 8709763276166726118, guid: 33f6536019c704044bf08e6fdff67c85, type: 3}
+  - {fileID: -2662777744890926540, guid: 87376e7c8330a994b81256361053b87a, type: 3}
+  - {fileID: 342109449615539085, guid: e255c7e7cfa59354892f2502881169de, type: 3}
+  - {fileID: 2989597962799792018, guid: a11bc0af2c659434a9ae5a16008928fe, type: 3}

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Cable : MonoBehaviour, IInteractable
 {
+    [SerializeField] private Objectif objectifSO;
     [SerializeField] private GameObject normalModel;
     [SerializeField] private GameObject cutModel;
     public InteractType Type => InteractType.Interact;
@@ -25,6 +26,7 @@ public class Cable : MonoBehaviour, IInteractable
 
     public void RemoveInteractable()
     {
+        ObjectifManager.Instance.Progresser(objectifSO.objectifID, 1);
         StartCoroutine(CutCable());
     }
 
@@ -39,11 +41,9 @@ public class Cable : MonoBehaviour, IInteractable
 
         // Slowly turn transparent and then be destroyed
         float elapsedTime = 0.0f;
-        Color baseColor = cutModel.GetComponent<MeshRenderer>().material.color;
-        Color finalColor = new Color(baseColor.r, baseColor.g, baseColor.b, 0.0f);
         while (elapsedTime < 2.0f)
         {
-            cutModel.GetComponent<MeshRenderer>().material.color = Color.Lerp(baseColor, finalColor, (elapsedTime / 2.0f));
+            cutModel.GetComponent<MeshRenderer>().material.SetFloat("_Alpha", (2.0f - elapsedTime) / 2.0f);
             elapsedTime += Time.deltaTime;
             yield return null;
         }

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4775953331662036085}
   - component: {fileID: 3361408730978616451}
   - component: {fileID: 1484943262783004245}
-  - component: {fileID: 1247702758783674245}
   - component: {fileID: 1720118038819514848}
   - component: {fileID: 7045168583038167851}
   m_Layer: 9
@@ -30,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 129850001704072357}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -69,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 47b903806b9774e4e8618774eeb4df72, type: 2}
+  - {fileID: 2100000, guid: ef26557e279edc64e94fb7553e42ff0b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,20 +92,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1247702758783674245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129850001704072357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fb7e63d816a8654ca0594a30ca551e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ThrashCan
-  normalModel: {fileID: 0}
-  burningModel: {fileID: 0}
 --- !u!198 &1720118038819514848
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -4937,7 +4922,7 @@ Transform:
   m_GameObject: {fileID: 3529500877060066932}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 0.5, z: -5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 113.7, y: 113.7, z: 113.7}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -4964,8 +4949,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.022, y: 0.029508673, z: 0.022}
-  m_Center: {x: 0, y: 0.0037543364, z: 0}
+  m_Size: {x: 0.022000004, y: 0.028560521, z: 0.022000004}
+  m_Center: {x: 0, y: 0.0143589405, z: 0}
 --- !u!114 &2974100713873563264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4978,6 +4963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fb7e63d816a8654ca0594a30ca551e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ThrashCan
+  objectifSO: {fileID: 11400000, guid: c6f68b492bf8e1b489bb09a9d01ba8ac, type: 2}
   normalModel: {fileID: 4425305323698949199}
   burningModel: {fileID: 129850001704072357}
 --- !u!1 &4425305323698949199
@@ -4991,7 +4977,6 @@ GameObject:
   - component: {fileID: 9200286953749349065}
   - component: {fileID: 5639622653678244255}
   - component: {fileID: 8890251632761053998}
-  - component: {fileID: 4985097524695482897}
   m_Layer: 9
   m_Name: Normal
   m_TagString: Untagged
@@ -5008,7 +4993,7 @@ Transform:
   m_GameObject: {fileID: 4425305323698949199}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -5072,17 +5057,3 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4985097524695482897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4425305323698949199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fb7e63d816a8654ca0594a30ca551e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ThrashCan
-  normalModel: {fileID: 0}
-  burningModel: {fileID: 0}
