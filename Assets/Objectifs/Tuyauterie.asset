@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tuyauterie
   m_EditorClassIdentifier: Assembly-CSharp::Objectif
   objectifID: tuyauterie
-  objectifDescription: "D\xE9truire la tuyauterie"
+  objectifDescription: "D\xE9truire la tuyauterie des radiateurs"
   requiredAmount: 0
   currentAmount: 0
   minAmount: 1

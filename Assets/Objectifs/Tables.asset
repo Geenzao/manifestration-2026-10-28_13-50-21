@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d30ce461fa8fb74f845a146516cb2a0, type: 3}
   m_Name: Tables
   m_EditorClassIdentifier: Assembly-CSharp::Objectif
-  objectifID: 
-  objectifDescription: Grignoter les tables
+  objectifID: grafitti
+  objectifDescription: "D\xE9grader des endroits en faisant des graffitis"
   requiredAmount: 0
   currentAmount: 0
   minAmount: 1

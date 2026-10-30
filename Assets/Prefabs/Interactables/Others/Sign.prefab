@@ -5123,13 +5123,12 @@ MonoBehaviour:
   particle: {fileID: 315937262104656835}
   signText: {fileID: 1093180223659106402}
   normalMessages:
-  - Normal \n #1
-  - Normal \n #2
-  - Normal \n #3
+  - "R\xE9voltons-nous !"
+  - Pancarte en \n COLERE
+  - "Appel \xE0 la \\n manifestation !"
   sabotagedMessages:
-  - Sabotaged \n #1
-  - Sabotaged \n #2
-  - Sabotaged \n #3
+  - Squeak ! \n Squeak !!! \n Squeak !!!!
+  - Squeak.
 --- !u!1 &8651010607163918768
 GameObject:
   m_ObjectHideFlags: 0
