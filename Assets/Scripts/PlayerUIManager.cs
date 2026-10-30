@@ -27,12 +27,16 @@ public class PlayerUIManager : MonoBehaviour
     {
         isUIOpen = !isUIOpen; // Toggle the UI state
         settingsUI.SetActive(isUIOpen); // Show or hide the settings UI based on the state
+
+        Cursor.visible = isUIOpen;
     }
 
     public void HandleCredits()
     {
         isUIOpen = !isUIOpen; // Toggle the UI state
         creditsUI.SetActive(isUIOpen); // Show or hide the credits UI based on the state
+
+        Cursor.visible = isUIOpen;
     }
     
 }
