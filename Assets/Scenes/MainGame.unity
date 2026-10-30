@@ -15157,6 +15157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c10c9c1d0df0e4ebac1b40e6c0b263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  ui: {fileID: 2135690389}
 --- !u!65 &874610284
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41905,6 +41906,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7097259992007418306, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8665644189865411762, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
       propertyPath: m_Name
       value: UI Jeu
@@ -41942,6 +41947,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 486de3421a8cd8940b4cac24c017705c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Objectifs
+--- !u!1 &2135690389 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7097259992007418306, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
+  m_PrefabInstance: {fileID: 2135690385}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2136661312
 PrefabInstance:
   m_ObjectHideFlags: 0
