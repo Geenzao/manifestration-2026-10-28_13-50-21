@@ -11,6 +11,24 @@ public class Parametres : MonoBehaviour
 
     // L'audio mixer utilisé pour gérer le volume du son
     [SerializeField] private AudioMixer mixer;
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider sfxSlider;
+
+    void Start()
+    {
+        // Initialiser les sliders avec les valeurs actuelles du mixer
+        float musicVolume;
+        if (mixer.GetFloat(MusicParamName, out musicVolume))
+        {
+            musicSlider.value = DbToSliderValue(musicVolume);
+        }
+
+        float sfxVolume;
+        if (mixer.GetFloat(SfxParamName, out sfxVolume))
+        {
+            sfxSlider.value = DbToSliderValue(sfxVolume);
+        }
+    }
 
     public void SetMusicVolume(float value)
     {
@@ -44,9 +62,13 @@ public class Parametres : MonoBehaviour
         return Mathf.Log10(value) * 20f;
     }
 
-    public void Close()
+    private float DbToSliderValue(float db)
     {
-        gameObject.SetActive(false);
-        PlayerUIManager.instance.isUIOpen = false;
+        if (db <= MinVolumeDb)
+        {
+            return 0f;
+        }
+
+        return Mathf.Pow(10f, db / 20f);
     }
 }
