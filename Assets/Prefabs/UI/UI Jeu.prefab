@@ -935,6 +935,8 @@ GameObject:
   - component: {fileID: 3042523431597337211}
   - component: {fileID: 950808024411241524}
   - component: {fileID: 6470457471379091032}
+  - component: {fileID: 3688491891374065253}
+  - component: {fileID: 3569402493580431419}
   m_Layer: 5
   m_Name: UI Jeu
   m_TagString: Untagged
@@ -1036,3 +1038,30 @@ MonoBehaviour:
   onTermine:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3688491891374065253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8665644189865411762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad30329074aebed428dbf5367da13132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIManager
+  interactNotif: {fileID: 0}
+--- !u!114 &3569402493580431419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8665644189865411762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a50503f17b0374149891708bdce78c63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractNotif
+  notifUI: {fileID: 7097259992007418306}
+  notifText: {fileID: 3279768757120074859}
