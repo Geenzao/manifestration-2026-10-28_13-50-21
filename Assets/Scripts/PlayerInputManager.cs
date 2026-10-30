@@ -58,7 +58,7 @@ public class PlayerInputManager : MonoBehaviour
             playerControls = new PlayerControls();
 
             // Takes values when input is performed and give it to our movementInput variable
-            
+
             playerControls.PlayerMovement.Movement.performed += input => movementInput = input.ReadValue<Vector2>();
             playerControls.PlayerCamera.Movement.performed += input => cameraInput = input.ReadValue<Vector2>();
             playerControls.PlayerCamera.Movement.canceled += input => cameraInput = Vector2.zero;
