@@ -5129,6 +5129,7 @@ MonoBehaviour:
   sabotagedMessages:
   - Squeak ! \n Squeak !!! \n Squeak !!!!
   - Squeak.
+  clip: {fileID: 8300000, guid: 21dc82921def5b54b95137b298215c45, type: 3}
 --- !u!1 &8651010607163918768
 GameObject:
   m_ObjectHideFlags: 0

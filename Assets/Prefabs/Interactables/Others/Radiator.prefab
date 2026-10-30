@@ -4937,6 +4937,7 @@ MonoBehaviour:
   normalModel: {fileID: 4778004390076314796}
   water: {fileID: 5366963089365026039}
   particle: {fileID: 2389978995154593656}
+  clip: {fileID: 8300000, guid: cd94d82a01ccc33489091ba7ac6ea7b4, type: 3}
 --- !u!1 &4778004390076314796
 GameObject:
   m_ObjectHideFlags: 0

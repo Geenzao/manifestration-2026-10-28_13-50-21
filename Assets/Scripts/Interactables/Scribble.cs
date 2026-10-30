@@ -8,6 +8,7 @@ public class Scribble : MonoBehaviour, IInteractable
     [SerializeField] private Objectif objectifSO;
     [SerializeField] private GameObject normalModel;
     [SerializeField] private GameObject scribbledModel;
+    [SerializeField] private AudioClip clip;
     public InteractType Type => InteractType.Interact;
 
     public bool CanInteract()
@@ -33,6 +34,7 @@ public class Scribble : MonoBehaviour, IInteractable
     public void RemoveInteractable()
     {
         ObjectifManager.Instance.Progresser(objectifSO.objectifID, 1);
+        SFXManager.instance.PlaySFX(clip);
         StartCoroutine(SabotageSign());
     }
 

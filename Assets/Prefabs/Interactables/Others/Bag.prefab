@@ -99,6 +99,7 @@ MonoBehaviour:
   objectifSO: {fileID: 11400000, guid: 782200c294509f847ae500cf5ebb8cac, type: 2}
   normalModel: {fileID: 4778004390076314796}
   particle: {fileID: 3683151686868370159}
+  clip: {fileID: 8300000, guid: cd94d82a01ccc33489091ba7ac6ea7b4, type: 3}
 --- !u!1 &3683151686868370159
 GameObject:
   m_ObjectHideFlags: 0

@@ -4935,6 +4935,7 @@ MonoBehaviour:
   objectifSO: {fileID: 11400000, guid: 8ec7a231bc6c71742a1aa9913836305e, type: 2}
   normalModel: {fileID: 4778004390076314796}
   cutModel: {fileID: 7578716994854925534}
+  clip: {fileID: 8300000, guid: ad910330d5b86e04888ac07acaeb3baa, type: 3}
 --- !u!1 &3683151686868370159
 GameObject:
   m_ObjectHideFlags: 0

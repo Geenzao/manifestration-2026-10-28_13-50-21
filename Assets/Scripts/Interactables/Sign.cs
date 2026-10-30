@@ -11,6 +11,7 @@ public class Sign : MonoBehaviour, IInteractable
     [SerializeField] private TextMeshPro signText;
     [SerializeField] private List<string> normalMessages;
     [SerializeField] private List<string> sabotagedMessages;
+    [SerializeField] private AudioClip clip;
     public InteractType Type => InteractType.Interact;
 
     private void Start()
@@ -41,6 +42,7 @@ public class Sign : MonoBehaviour, IInteractable
     public void RemoveInteractable()
     {
         ObjectifManager.Instance.Progresser(objectifSO.objectifID, 1);
+        SFXManager.instance.PlaySFX(clip);
         StartCoroutine(SabotageSign());
     }
 

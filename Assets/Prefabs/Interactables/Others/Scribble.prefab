@@ -190,6 +190,7 @@ MonoBehaviour:
   objectifSO: {fileID: 11400000, guid: 3c655a84f26b3094b828a2c0c0af91f6, type: 2}
   normalModel: {fileID: 4778004390076314796}
   scribbledModel: {fileID: 1847401426089184027}
+  clip: {fileID: 8300000, guid: 21dc82921def5b54b95137b298215c45, type: 3}
 --- !u!1 &4750855569740630073
 GameObject:
   m_ObjectHideFlags: 0
