@@ -9,11 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 849cc2af428a62848ae17b1c3a26bf33
   - enabled: 1
-    path: Assets/Scenes/MainGame.unity
-    guid: 17466de8dc0b58f4b9103b943dd27aa8
-  - enabled: 1
-    path: Assets/Scenes/MainGame copie.unity
-    guid: 60adfc1ffc344334a9f1d982c2b66122
+    path: Assets/Scenes/Cour & Map.unity
+    guid: 3093741943532be42896709d46672d4d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

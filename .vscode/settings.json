@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "manifestration-2026-10-28_13-50-21.slnx"
+    "dotnet.defaultSolution": "manifestration.slnx"
 }

@@ -22,7 +22,7 @@ public class TitleScreenManager : MonoBehaviour
     }
     public IEnumerator StartGameAsync()
     {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("MainGame copie");
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Cour & Map");
 
         yield return null;
     }

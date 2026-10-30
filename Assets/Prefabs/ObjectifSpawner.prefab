@@ -48,27 +48,63 @@ MonoBehaviour:
   - objectif: {fileID: 11400000, guid: bc080a714cc679c41a5b1a18fd9fa14c, type: 2}
     objets:
     - prefab: {fileID: 3529500877060066932, guid: a384fe4d5f7aa1a428df8c881c3fbf35, type: 3}
-      positions: []
+      positions:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
     - prefab: {fileID: 2617345809520769905, guid: 08c64fdeda16da74c96f2b6aa652352b, type: 3}
-      positions: []
+      positions:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
   - objectif: {fileID: 11400000, guid: c6f68b492bf8e1b489bb09a9d01ba8ac, type: 2}
     objets:
     - prefab: {fileID: 3529500877060066932, guid: 55e844677dc43794a95f8659afca6145, type: 3}
-      positions: []
+      positions:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
     - prefab: {fileID: 2617345809520769905, guid: 158db8e87f77d454fb17f15925691ec4, type: 3}
-      positions: []
+      positions:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
   - objectif: {fileID: 11400000, guid: a3afb12728b55494d9f57085c9c2003a, type: 2}
     objets:
     - prefab: {fileID: 3529500877060066932, guid: 6583e9ad513abe64483a6558189be335, type: 3}
-      positions: []
+      positions:
+      - {fileID: 0}
   - objectif: {fileID: 11400000, guid: 8da2ea5b4bce0d947946d1bfccc07795, type: 2}
     objets:
     - prefab: {fileID: 3529500877060066932, guid: d337a0e27b13cc14a99834888c2b1ea6, type: 3}
-      positions: []
+      positions:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
     - prefab: {fileID: 2617345809520769905, guid: 18a777279a8ec2a45a7c7f182fe2aa70, type: 3}
-      positions: []
+      positions:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
   - objectif: {fileID: 11400000, guid: 8ec7a231bc6c71742a1aa9913836305e, type: 2}
     objets:
     - prefab: {fileID: 3529500877060066932, guid: e99d733313868504aa65bf0462f7c56b, type: 3}
-      positions: []
+      positions:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
   conteneur: {fileID: 0}

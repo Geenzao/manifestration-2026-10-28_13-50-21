@@ -45,13 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectifManager
   objectifs:
-  - {fileID: 11400000, guid: 782200c294509f847ae500cf5ebb8cac, type: 2}
   - {fileID: 11400000, guid: 8ec7a231bc6c71742a1aa9913836305e, type: 2}
-  - {fileID: 11400000, guid: 12763d2a98fc63e41ab76a5c71916454, type: 2}
   - {fileID: 11400000, guid: bc080a714cc679c41a5b1a18fd9fa14c, type: 2}
   - {fileID: 11400000, guid: a3afb12728b55494d9f57085c9c2003a, type: 2}
   - {fileID: 11400000, guid: c6f68b492bf8e1b489bb09a9d01ba8ac, type: 2}
-  - {fileID: 11400000, guid: 3c655a84f26b3094b828a2c0c0af91f6, type: 2}
   - {fileID: 11400000, guid: 8da2ea5b4bce0d947946d1bfccc07795, type: 2}
   objectifsUI: {fileID: 0}
   spawner: {fileID: 0}
