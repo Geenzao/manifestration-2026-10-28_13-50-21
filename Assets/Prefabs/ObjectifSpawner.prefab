@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1132852255067448460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4325073816602090335}
+  - component: {fileID: 6558193469411017246}
+  m_Layer: 0
+  m_Name: ObjectifSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4325073816602090335
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132852255067448460}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 201.01942, y: 5.2198, z: -7.91725}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6558193469411017246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132852255067448460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96b88509a305d2440be98f6589324327, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  entrees:
+  - objectif: {fileID: 11400000, guid: bc080a714cc679c41a5b1a18fd9fa14c, type: 2}
+    objets:
+    - prefab: {fileID: 3529500877060066932, guid: a384fe4d5f7aa1a428df8c881c3fbf35, type: 3}
+      positions:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - prefab: {fileID: 2617345809520769905, guid: 08c64fdeda16da74c96f2b6aa652352b, type: 3}
+      positions:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+  - objectif: {fileID: 11400000, guid: c6f68b492bf8e1b489bb09a9d01ba8ac, type: 2}
+    objets:
+    - prefab: {fileID: 3529500877060066932, guid: 55e844677dc43794a95f8659afca6145, type: 3}
+      positions:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - prefab: {fileID: 2617345809520769905, guid: 158db8e87f77d454fb17f15925691ec4, type: 3}
+      positions:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+  - objectif: {fileID: 11400000, guid: a3afb12728b55494d9f57085c9c2003a, type: 2}
+    objets:
+    - prefab: {fileID: 3529500877060066932, guid: 6583e9ad513abe64483a6558189be335, type: 3}
+      positions:
+      - {fileID: 0}
+  - objectif: {fileID: 11400000, guid: 8da2ea5b4bce0d947946d1bfccc07795, type: 2}
+    objets:
+    - prefab: {fileID: 3529500877060066932, guid: d337a0e27b13cc14a99834888c2b1ea6, type: 3}
+      positions:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - prefab: {fileID: 2617345809520769905, guid: 18a777279a8ec2a45a7c7f182fe2aa70, type: 3}
+      positions:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+  - objectif: {fileID: 11400000, guid: 8ec7a231bc6c71742a1aa9913836305e, type: 2}
+    objets:
+    - prefab: {fileID: 3529500877060066932, guid: e99d733313868504aa65bf0462f7c56b, type: 3}
+      positions:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+  conteneur: {fileID: 0}

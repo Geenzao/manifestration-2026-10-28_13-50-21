@@ -8,9 +8,13 @@ public class ObjectifManager : MonoBehaviour
 
     [SerializeField] private List<Objectif> objectifs;
     [SerializeField] private ObjectifsUI objectifsUI;
+    [SerializeField] private ObjectifSpawner spawner;
     public UnityEvent onTousObjectifsTermines;
     private List<Objectif> objectifsCopies = new List<Objectif>();
     private bool objectifsTerminesNotifie;
+
+    // Nombre d'objectifs différents disponibles = nombre de rounds max
+    public int MaxObjectifs => objectifs.Count;
 
     private void Awake()
     {
@@ -29,6 +33,7 @@ public class ObjectifManager : MonoBehaviour
             Instance = null;
     }
 
+    // Tire "amount" objectifs différents au hasard et fait apparaître leurs objets
     public void AddObjectifs(int amount)
     {
         objectifsTerminesNotifie = false;
@@ -50,6 +55,9 @@ public class ObjectifManager : MonoBehaviour
 
             objectifsCopies.Add(obj);
             objectifsUI.AddObjective(obj);
+
+            if (spawner != null)
+                spawner.Spawn(obj); // après requiredAmount, pour spawn le bon nombre
         }
     }
 
@@ -80,5 +88,8 @@ public class ObjectifManager : MonoBehaviour
         objectifsCopies.Clear();
         objectifsTerminesNotifie = false;
         objectifsUI.ClearObjectives();
+
+        if (spawner != null)
+            spawner.Clear();
     }
 }

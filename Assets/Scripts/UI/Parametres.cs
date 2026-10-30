@@ -11,42 +11,22 @@ public class Parametres : MonoBehaviour
 
     // L'audio mixer utilisé pour gérer le volume du son
     [SerializeField] private AudioMixer mixer;
-    // Le slider de la musique
     [SerializeField] private Slider musicSlider;
-    // Le slider des SFX
     [SerializeField] private Slider sfxSlider;
-    [SerializeField] private Button quitButton;
 
-    private void Awake()
+    void Start()
     {
-        if (musicSlider != null)
+        // Initialiser les sliders avec les valeurs actuelles du mixer
+        float musicVolume;
+        if (mixer.GetFloat(MusicParamName, out musicVolume))
         {
-            mixer.GetFloat(MusicParamName, out float musicDb);
-            musicSlider.value = Mathf.Pow(10f, musicDb / 20f);
-            //Quand la valeur du slider est changer on appelle SetMusicVolume avec la nouvelle valeur comme parametre
-            musicSlider.onValueChanged.AddListener(SetMusicVolume);
+            musicSlider.value = DbToSliderValue(musicVolume);
         }
 
-        if (sfxSlider != null)
+        float sfxVolume;
+        if (mixer.GetFloat(SfxParamName, out sfxVolume))
         {
-            mixer.GetFloat(SfxParamName, out float musicDb);
-            sfxSlider.value = Mathf.Pow(10f, musicDb / 20f);
-            //Quand la valeur du slider est changer on appelle SetSFXVolume avec la nouvelle valeur comme parametre
-            sfxSlider.onValueChanged.AddListener(SetSFXVolume);
-        }
-        quitButton.onClick.AddListener(Close);
-    }
-
-    private void OnDestroy()
-    {
-        if (musicSlider != null)
-        {
-            musicSlider.onValueChanged.RemoveListener(SetMusicVolume);
-        }
-
-        if (sfxSlider != null)
-        {
-            sfxSlider.onValueChanged.RemoveListener(SetSFXVolume);
+            sfxSlider.value = DbToSliderValue(sfxVolume);
         }
     }
 
@@ -82,8 +62,13 @@ public class Parametres : MonoBehaviour
         return Mathf.Log10(value) * 20f;
     }
 
-    private void Close()
+    private float DbToSliderValue(float db)
     {
-        gameObject.SetActive(false);
+        if (db <= MinVolumeDb)
+        {
+            return 0f;
+        }
+
+        return Mathf.Pow(10f, db / 20f);
     }
 }

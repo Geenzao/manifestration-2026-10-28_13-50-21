@@ -95,7 +95,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8039725205395202093
 RectTransform:
   m_ObjectHideFlags: 0
@@ -113,7 +113,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 18, y: -18}
-  m_SizeDelta: {x: 650, y: 0}
+  m_SizeDelta: {x: 15, y: 40}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &4629617586753032843
 CanvasRenderer:
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
-  m_HorizontalFit: 0
+  m_HorizontalFit: 2
   m_VerticalFit: 2
 --- !u!114 &9035366483714118672
 MonoBehaviour:
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.VerticalLayoutGroup
   m_Padding:
     m_Left: 0
-    m_Right: 0
+    m_Right: 15
     m_Top: 20
     m_Bottom: 20
   m_ChildAlignment: 0
@@ -625,8 +625,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 5:00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 01f8ccdf6d6522847a1f4f80814625c4, type: 2}
+  m_sharedMaterial: {fileID: 1268768419079816922, guid: 01f8ccdf6d6522847a1f4f80814625c4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -650,8 +650,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -933,6 +933,10 @@ GameObject:
   - component: {fileID: 978257040634129110}
   - component: {fileID: 162361797146360159}
   - component: {fileID: 3042523431597337211}
+  - component: {fileID: 950808024411241524}
+  - component: {fileID: 6470457471379091032}
+  - component: {fileID: 3688491891374065253}
+  - component: {fileID: 3569402493580431419}
   m_Layer: 5
   m_Name: UI Jeu
   m_TagString: Untagged
@@ -1001,3 +1005,63 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &950808024411241524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8665644189865411762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486de3421a8cd8940b4cac24c017705c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Objectifs
+  objectivePanel: {fileID: 2875286983682826751}
+  objectivePrefab: {fileID: 1654965359384281438, guid: ffb72e03ec798b34abcc6b8d811e8c9a, type: 3}
+--- !u!114 &6470457471379091032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8665644189865411762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83309b2fc0887764c9518863c40e3cee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  texte: {fileID: 576370783389674793}
+  compteARebours: 1
+  dureeInitiale: 300
+  demarrerAuLancement: 0
+  onTermine:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &3688491891374065253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8665644189865411762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad30329074aebed428dbf5367da13132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIManager
+  interactNotif: {fileID: 0}
+--- !u!114 &3569402493580431419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8665644189865411762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a50503f17b0374149891708bdce78c63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractNotif
+  notifUI: {fileID: 7097259992007418306}
+  notifText: {fileID: 3279768757120074859}
