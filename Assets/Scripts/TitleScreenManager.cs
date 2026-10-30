@@ -22,7 +22,7 @@ public class TitleScreenManager : MonoBehaviour
     }
     public IEnumerator StartGameAsync()
     {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("MainGame");
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("MainGame copie");
 
         yield return null;
     }
@@ -69,9 +69,9 @@ public class TitleScreenManager : MonoBehaviour
         // Give avatar to parent (Player) animator
         GameObject currentSkin = playerSkins[currentSkinIndex];
         Animator currentSkinAnimator = currentSkin.GetComponent<Animator>();
-        
+
         if (currentSkinAnimator != null)
-        {   
+        {
             // Get avatar from the current skin's animator
             Avatar avatar = currentSkinAnimator.avatar;
 

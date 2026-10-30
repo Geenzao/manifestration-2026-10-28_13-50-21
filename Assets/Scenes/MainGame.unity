@@ -651,10 +651,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   chrono: {fileID: 1348524942}
+  hubSpawn: {fileID: 0}
+  questSpawn: {fileID: 0}
+  onRoundStart:
+    m_PersistentCalls:
+      m_Calls: []
   onWin:
     m_PersistentCalls:
       m_Calls: []
   onLose:
+    m_PersistentCalls:
+      m_Calls: []
+  onReturnToHub:
+    m_PersistentCalls:
+      m_Calls: []
+  onGameWon:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &1321565296
@@ -680,30 +691,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1193634499}
     m_Modifications:
-    - target: {fileID: 443464959569945914, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
-      propertyPath: m_HorizontalFit
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 576370783389674793, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
-      propertyPath: m_fontSize
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 576370783389674793, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 01f8ccdf6d6522847a1f4f80814625c4, type: 2}
-    - target: {fileID: 576370783389674793, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 576370783389674793, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 1268768419079816922, guid: 01f8ccdf6d6522847a1f4f80814625c4, type: 2}
-    - target: {fileID: 576370783389674793, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 978257040634129110, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -784,96 +771,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2875286983682826751, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8039725205395202093, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8039725205395202093, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 8665644189865411762, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
       propertyPath: m_Name
       value: UI Jeu
       objectReference: {fileID: 0}
-    - target: {fileID: 9035366483714118672, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
-      propertyPath: m_Padding.m_Right
-      value: 15
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8665644189865411762, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1348524943}
-    - targetCorrespondingSourceObject: {fileID: 8665644189865411762, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1348524942}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
---- !u!114 &1348524938 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 576370783389674793, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
-  m_PrefabInstance: {fileID: 1348524937}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!224 &1348524939 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 978257040634129110, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
   m_PrefabInstance: {fileID: 1348524937}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1348524940 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2875286983682826751, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
-  m_PrefabInstance: {fileID: 1348524937}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1348524941 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8665644189865411762, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
-  m_PrefabInstance: {fileID: 1348524937}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1348524942
+--- !u!114 &1348524942 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6470457471379091032, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
+  m_PrefabInstance: {fileID: 1348524937}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1348524941}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83309b2fc0887764c9518863c40e3cee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  texte: {fileID: 1348524938}
-  compteARebours: 1
-  dureeInitiale: 300
-  demarrerAuLancement: 0
-  onTermine:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1348524943
+--- !u!114 &1348524943 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 950808024411241524, guid: 21080de0c047dbf4fbf9266b57505474, type: 3}
+  m_PrefabInstance: {fileID: 1348524937}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1348524941}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 486de3421a8cd8940b4cac24c017705c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Objectifs
-  objectivePanel: {fileID: 1348524940}
-  objectivePrefab: {fileID: 1654965359384281438, guid: ffb72e03ec798b34abcc6b8d811e8c9a, type: 3}
 --- !u!1 &1708605320
 GameObject:
   m_ObjectHideFlags: 0
