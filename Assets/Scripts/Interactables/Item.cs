@@ -42,6 +42,14 @@ public class Item : MonoBehaviour, IInteractable, IItem
             transform.position = player.transform.position + Vector3.up * 0.7f;
             transform.rotation = player.transform.rotation;
         }
+        // Failsafe which might not work in case when throwing item it just dissapear ?
+        if (transform.position.y <= -9.0f)
+        {
+            Debug.Log("Rare bug !? : " + transform.position);
+            transform.position = transform.position + Vector3.up * 10.0f;
+            GetComponent<Rigidbody>().linearVelocity = Vector3.up;
+
+        }
     }
 
     public void Throw(Vector3 dir, float throwPower)
