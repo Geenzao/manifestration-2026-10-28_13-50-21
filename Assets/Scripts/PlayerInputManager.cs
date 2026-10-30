@@ -16,6 +16,9 @@ public class PlayerInputManager : MonoBehaviour
     [Header("Action Input")]
     [SerializeField] bool jumpInput = false;
 
+    [Header("UI Input")]
+    [SerializeField] bool settingsInput = false;
+
 
     void Awake()
     {
@@ -39,7 +42,6 @@ public class PlayerInputManager : MonoBehaviour
         }
         else
         {   
-            Debug.Log("Enabling PlayerInputManager for scene: " + currentScene.name);
             instance.enabled = true;
         }
     }
@@ -53,6 +55,7 @@ public class PlayerInputManager : MonoBehaviour
             // Takes values when input is performed and give it to our movementInput variable
             playerControls.PlayerMovement.Movement.performed += input => movementInput = input.ReadValue<Vector2>();
             playerControls.PlayerActions.Jump.performed += input => jumpInput = true;
+            playerControls.PlayerUI.OpenSettings.performed += input => settingsInput = true;
         }
 
         playerControls.Enable();
@@ -81,9 +84,13 @@ public class PlayerInputManager : MonoBehaviour
     {
         HandleMovementInput();
         HandleJumpInput();
+        HandleSettingsInput();
     }
     void HandleMovementInput()
-    {
+    {  
+        if (PlayerUIManager.instance.isUIOpen)
+            return;
+
         verticalInput = movementInput.y;
         horizontalInput = movementInput.x;
 
@@ -107,9 +114,23 @@ public class PlayerInputManager : MonoBehaviour
     private void HandleJumpInput()
     {
         if (jumpInput)
-        {
+        {   
             jumpInput = false;
+
+            if (PlayerUIManager.instance.isUIOpen)
+                return;
+
             player.playerLocomotionManager.AttemptToPerformJump();
         }
     }
+
+    private void HandleSettingsInput()
+    {
+        if (settingsInput)
+        {
+            settingsInput = false;
+            PlayerUIManager.instance.HandleSettings();
+        }
+    }
+
 }
