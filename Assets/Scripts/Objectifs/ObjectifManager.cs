@@ -12,6 +12,9 @@ public class ObjectifManager : MonoBehaviour
     private List<Objectif> objectifsCopies = new List<Objectif>();
     private bool objectifsTerminesNotifie;
 
+    // Nombre d'objectifs différents disponibles = nombre de rounds max
+    public int MaxObjectifs => objectifs.Count;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -29,6 +32,7 @@ public class ObjectifManager : MonoBehaviour
             Instance = null;
     }
 
+    // Tire "amount" objectifs différents au hasard
     public void AddObjectifs(int amount)
     {
         objectifsTerminesNotifie = false;
